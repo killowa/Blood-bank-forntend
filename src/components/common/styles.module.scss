@@ -1,7 +1,6 @@
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
 
 .card {
-  height: 75%;
   width: 75%;
   border-radius: 10px;
   background-color: white;
@@ -25,4 +24,15 @@
   color: $danger;
   margin-left: 10px;
   font-size: small;
+}
+
+.subscript {
+  font-size: small;
+  margin-left: 5px
+}
+
+.select {
+  @extend .form-select;
+  height: 40px;
+  width: fit-content;
 }

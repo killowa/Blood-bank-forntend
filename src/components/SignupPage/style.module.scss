@@ -25,9 +25,3 @@ h1 {
   @extend .form-control;
   height: 40px;
 }
-
-.select {
-  @extend .form-select;
-  height: 40px;
-  width: fit-content;
-}

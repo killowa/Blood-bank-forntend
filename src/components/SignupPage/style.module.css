@@ -12514,7 +12514,6 @@ fieldset:disabled .btn {
 }
 
 .card {
-  height: 75%;
   width: 75%;
   border-radius: 10px;
   background-color: white;
@@ -12535,6 +12534,18 @@ fieldset:disabled .btn {
   color: #dc3545;
   margin-left: 10px;
   font-size: small;
+}
+
+.subscript {
+  font-size: small;
+  margin-left: 5px;
+}
+
+.select {
+  height: 40px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .center {
@@ -12569,12 +12580,5 @@ h1, .h1 {
 
 .form-control {
   height: 40px;
-}
-
-.select {
-  height: 40px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 /*# sourceMappingURL=style.module.css.map */

@@ -27,7 +27,7 @@ const Form = () => {
       <FormikForm className={`w-100 h-100 ${styles.center}`}>
         <Input name="username" />
         <Input name="password" type="password" />
-        <button className={`${styles.btn} btn-dark w-50 mt-4`} type="submit">Submit</button>
+        <button className={`${styles.btn} btn-dark w-50 my-4`} type="submit">Submit</button>
       </FormikForm>
 
     </Formik>
