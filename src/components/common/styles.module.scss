@@ -1,0 +1,28 @@
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+
+.card {
+  height: 75%;
+  width: 75%;
+  border-radius: 10px;
+  background-color: white;
+  border: none;
+}
+
+.form-control {
+  @extend .form-control;
+  height: 60px;
+  font-size: medium;
+}
+
+.btn {
+  @extend .btn;
+  @extend .btn-dark;
+  font-size: large;
+  height: 60px;
+}
+
+.error {
+  color: $danger;
+  margin-left: 10px;
+  font-size: small;
+}

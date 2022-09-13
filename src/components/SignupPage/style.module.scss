@@ -1,0 +1,33 @@
+@import '../common/styles.module.scss';
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup {
+  background-image: url('../../assets/images/bg2.jpg');
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+h1 {
+  color: white;
+  padding: 10px;
+}
+
+.form-control {
+  @extend .form-control;
+  height: 40px;
+}
+
+.select {
+  @extend .form-select;
+  height: 40px;
+  width: fit-content;
+}
