@@ -13,7 +13,9 @@ root.render(
       <Route path='signin' element = {<SigninPage/>} />
       <Route path='signup' element = {<SignupPage/>} />
       <Route path='/' element={<App/>}>
-          <Route path='dashboard' element={<Dashboard/>} />
+          <Route path='dashboard' element={<Dashboard/>}>
+            <Route path='donate' element={<></>}/>
+          </Route>
       </Route>
     </Routes>
   </BrowserRouter>

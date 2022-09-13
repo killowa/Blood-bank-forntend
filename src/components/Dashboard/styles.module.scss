@@ -7,11 +7,27 @@
   color: $light;
   display: flex;
   flex-direction: column;
+  border: $light 1px solid;
+  border-left: none;
 }
 
 .sideBarItem {
-  font-size: x-large;
-  flex: 1;
   @extend .center;
+  font-size: x-large;
+  background-color: $dark;
+  color: $light;
+  flex: 1;
   border-bottom: $light 1px solid;
+
+  &:hover {
+    color: $light;
+
+    @extend .active
+  }
+}
+
+.active {
+  background-color: $light;
+  color: $dark;
+  border: $dark 1px solid;
 }

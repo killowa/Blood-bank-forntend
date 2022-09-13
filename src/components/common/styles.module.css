@@ -12553,10 +12553,6 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  color: purple;
-}
-
 nav {
   background-color: #212529;
   color: #f8f9fa;
