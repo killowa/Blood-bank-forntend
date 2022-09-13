@@ -1,5 +1,7 @@
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
 
+// Common components styling
+
 .card {
   width: 75%;
   border-radius: 10px;
@@ -35,4 +37,58 @@
   @extend .form-select;
   height: 40px;
   width: fit-content;
+}
+
+// Global stylings
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    color: purple;
+  }
+}
+
+nav {
+  background-color: $dark;
+  color: $light;
+  padding: 0 !important;
+
+  a {
+    display: inline-block;
+    color: $light;
+    font-size: large;
+    padding: 15px 20px;
+    &:hover {
+      color: $dark;
+      background-color: $light;
+    }
+  }
+}
+
+.brand {
+  font-size: x-large;
+
+  &:hover {
+    color: $light;
+    background-color: $dark
+  }
+}
+
+.containerFluid {
+  @extend .container-fluid;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  height: 100vh;
 }

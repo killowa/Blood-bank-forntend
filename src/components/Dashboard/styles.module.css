@@ -646,7 +646,8 @@ progress {
 .container-md,
 .container-lg,
 .container-xl,
-.container-xxl {
+.container-xxl,
+.containerFluid {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   width: 100%;
@@ -4324,7 +4325,7 @@ fieldset:disabled .btn {
 }
 
 .navbar > .container,
-.navbar > .container-fluid, .navbar > .container-sm, .navbar > .container-md, .navbar > .container-lg, .navbar > .container-xl, .navbar > .container-xxl {
+.navbar > .container-fluid, .navbar > .container-sm, .navbar > .container-md, .navbar > .container-lg, .navbar > .container-xl, .navbar > .container-xxl, .navbar > .containerFluid {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12548,7 +12549,50 @@ fieldset:disabled .btn {
   width: fit-content;
 }
 
-.center {
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: purple;
+}
+
+nav {
+  background-color: #212529;
+  color: #f8f9fa;
+  padding: 0 !important;
+}
+
+nav a {
+  display: inline-block;
+  color: #f8f9fa;
+  font-size: large;
+  padding: 15px 20px;
+}
+
+nav a:hover {
+  color: #212529;
+  background-color: #f8f9fa;
+}
+
+.brand {
+  font-size: x-large;
+}
+
+.brand:hover {
+  color: #f8f9fa;
+  background-color: #212529;
+}
+
+.containerFluid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.center, .sideBarItem {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12564,29 +12608,29 @@ fieldset:disabled .btn {
           justify-content: center;
 }
 
-.signup {
-  background-image: url("../../assets/images/bg2.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+body {
   height: 100vh;
-  width: 100%;
 }
 
-h1, .h1 {
-  color: white;
-  padding: 10px;
+.sideBar {
+  height: 100%;
+  width: 20%;
+  background-color: #dc3545;
+  color: #f8f9fa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.form-control {
-  height: 40px;
+.sideBarItem {
+  font-size: x-large;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border-bottom: #f8f9fa 1px solid;
 }
-
-form {
-  width: 80%;
-}
-
-.btn {
-  text-align: center;
-}
-/*# sourceMappingURL=style.module.css.map */
+/*# sourceMappingURL=styles.module.css.map */

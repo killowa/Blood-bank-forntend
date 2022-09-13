@@ -1,9 +1,13 @@
-import { Formik, ErrorMessage, Form as FormikForm } from "formik";
+import { Formik, Form as FormikForm } from "formik";
 import Input from "../common/Input";
 import styles from './style.module.css'
 import * as yup from 'yup'
+import { Link, useNavigate } from "react-router-dom";
+import routes from "../../Routes";
 
 const Form = () => {
+  const navigate = useNavigate()
+
   const initialValues = {
     username: "",
     password: ""
@@ -22,12 +26,15 @@ const Form = () => {
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit = {(values) => console.log(values)}
+      onSubmit = {(values) => {
+        navigate(routes.dashboard)
+      }}
     >
       <FormikForm className={`w-100 h-100 ${styles.center}`}>
         <Input name="username" />
         <Input name="password" type="password" />
-        <button className={`${styles.btn} btn-dark w-50 my-4`} type="submit">Submit</button>
+        <span>Don't have an account?<Link to='/signup'> signup</Link></span> 
+        <button className={`${styles.btn} w-50 my-4`} type="submit">Submit</button>
       </FormikForm>
 
     </Formik>

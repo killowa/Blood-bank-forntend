@@ -1,0 +1,17 @@
+@import '../common/styles.module.scss';
+
+.sideBar {
+  height: 100%;
+  width: 20%;
+  background-color: $danger;
+  color: $light;
+  display: flex;
+  flex-direction: column;
+}
+
+.sideBarItem {
+  font-size: x-large;
+  flex: 1;
+  @extend .center;
+  border-bottom: $light 1px solid;
+}

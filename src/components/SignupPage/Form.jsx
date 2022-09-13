@@ -1,4 +1,5 @@
 import { Formik, Field, Form as FormikForm } from "formik";
+import { Link } from 'react-router-dom'
 import styles from './style.module.css'
 import * as yup from 'yup'
 import Input from "../common/Input";
@@ -38,9 +39,11 @@ const Form = () => {
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit = {(values) => console.log(values)}
+      onSubmit = {(values) => {
+        console.log(values)
+      }}
     >
-      <FormikForm className={`w-100 h-100 ${styles.center}`}>
+      <FormikForm className={`h-100 d-flex flex-column`}>
         <Input name="email" className={styles['form-control']}/>
         <Input name="username" className={styles['form-control']}/>
         <Input name="name" className={styles['form-control']}/>
@@ -62,7 +65,8 @@ const Form = () => {
             <div className={styles.subscript}>Blood type</div>
           </div>
         </div>
-        <button className={`${styles.btn} btn-dark w-50 my-4`} type="submit">Submit</button>
+        <span className="my-2">Already have an account?<Link to='/signin'> signin</Link></span>
+        <button className={`${styles.btn} mx-auto w-50 my-4`} type="submit">Submit</button>
       </FormikForm>
 
     </Formik>
