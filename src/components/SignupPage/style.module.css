@@ -646,7 +646,8 @@ progress {
 .container-md,
 .container-lg,
 .container-xl,
-.container-xxl {
+.container-xxl,
+.containerFluid {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   width: 100%;
@@ -4324,7 +4325,7 @@ fieldset:disabled .btn {
 }
 
 .navbar > .container,
-.navbar > .container-fluid, .navbar > .container-sm, .navbar > .container-md, .navbar > .container-lg, .navbar > .container-xl, .navbar > .container-xxl {
+.navbar > .container-fluid, .navbar > .container-sm, .navbar > .container-md, .navbar > .container-lg, .navbar > .container-xl, .navbar > .container-xxl, .navbar > .containerFluid {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12546,6 +12547,65 @@ fieldset:disabled .btn {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  background-color: #0d6efd;
+  color: #f8f9fa;
+  padding: 0 !important;
+}
+
+nav a {
+  display: inline-block;
+  color: #f8f9fa;
+  font-size: large;
+  padding: 15px 20px;
+}
+
+nav a:hover {
+  color: #212529;
+  background-color: #f8f9fa;
+}
+
+.brand {
+  font-size: x-large;
+}
+
+.brand:hover {
+  color: #f8f9fa;
+  background-color: #212529;
+}
+
+.containerFluid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body {
+  height: 100vh;
 }
 
 .center {

@@ -2,7 +2,7 @@ const routes = {
   signin: '/signin',
   signup: '/signup',
   dashboard: '/dashboard',
-  bloodTransactionsHistory: '/history',
+  bloodTransactionsHistory: '/dashboard/history',
   donate: '/dashboard/donate',
   request: '/dashboard/request'
 }

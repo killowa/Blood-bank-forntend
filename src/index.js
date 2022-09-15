@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import SigninPage from './components/SigninPage/Index';
 import SignupPage from './components/SignupPage/Index';
 import Dashboard from './components/Dashboard/Index';
+import BloodHistoryPage from './components/BloodHistoryPage/Index';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,7 +15,7 @@ root.render(
       <Route path='signup' element = {<SignupPage/>} />
       <Route path='/' element={<App/>}>
           <Route path='dashboard' element={<Dashboard/>}>
-            <Route path='donate' element={<></>}/>
+            <Route path='history' element={<BloodHistoryPage/>}/>
           </Route>
       </Route>
     </Routes>

@@ -1,0 +1,28 @@
+@import '../common/styles.module.scss';
+
+.table {
+  align-self: flex-start;
+  margin: 10px;
+  width: 80%;
+  border-bottom: 1px solid;
+
+  tr {
+    display: flex;
+    justify-content: space-between;
+    background-color: yellowgreen;
+    border: 1px solid;
+    border-bottom: none;
+    border-right: none;
+  }
+
+  th, td {
+    text-align: center;
+    width: 100%;
+    border-right: 1px solid;
+    padding: 8px;
+  }
+
+  td {
+    background-color: $light;
+  }
+}

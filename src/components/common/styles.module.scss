@@ -1,4 +1,5 @@
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+$secondary-color: darkblue;
 
 // Common components styling
 
@@ -46,7 +47,7 @@ a {
 }
 
 nav {
-  background-color: $dark;
+  background-color: $secondary-color;
   color: $light;
   padding: 0 !important;
 

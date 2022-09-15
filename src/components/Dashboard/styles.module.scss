@@ -2,8 +2,8 @@
 
 .sideBar {
   height: 100%;
-  width: 20%;
-  background-color: $danger;
+  width: 15%;
+  background-color: $secondary-color;
   color: $light;
   display: flex;
   flex-direction: column;
@@ -13,10 +13,9 @@
 
 .sideBarItem {
   @extend .center;
-  font-size: x-large;
-  background-color: $dark;
+  font-size: medium;
+  background-color: $secondary-color;
   color: $light;
-  flex: 1;
   border-bottom: $light 1px solid;
 
   &:hover {
@@ -27,7 +26,5 @@
 }
 
 .active {
-  background-color: $light;
-  color: $dark;
-  border: $dark 1px solid;
+  opacity: 0.8;
 }
