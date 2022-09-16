@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom'
 import styles from './style.module.css'
 import * as yup from 'yup'
 import Input from "../common/Input";
+import bloodTypes from "../../bloodTypes";
 
 const Form = () => {
-
-  const bloodTypes = [ 'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-' ]
 
   const initialValues = {
     name: "",
@@ -59,14 +58,14 @@ const Form = () => {
           </div>
 
           <div>
-            <Field as="select" name="bloodType" className={`${styles.select} mt-3`}>
+            <Field as="select" name="bloodType" className="select mt-3">
               {bloodTypes.map(bloodType => (<option key={bloodType} value={bloodType}>{bloodType}</option>))}
             </Field>
             <div className={styles.subscript}>Blood type</div>
           </div>
         </div>
         <span className="my-2">Already have an account?<Link to='/signin'> signin</Link></span>
-        <button className={`${styles.btn} mx-auto w-50 my-4`} type="submit">Submit</button>
+        <button className={`my-btn mx-auto w-50 my-4`} type="submit">Submit</button>
       </FormikForm>
 
     </Formik>

@@ -21,7 +21,7 @@
   &:hover {
     color: $light;
 
-    @extend .active
+    @extend .active;
   }
 }
 

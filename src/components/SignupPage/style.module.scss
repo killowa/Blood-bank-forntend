@@ -1,12 +1,5 @@
 @import '../common/styles.module.scss';
 
-.center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .signup {
   background-image: url('../../assets/images/bg2.jpg');
   background-position: center;
@@ -28,8 +21,4 @@ h1 {
 
 form {
   width: 80%;
-}
-
-.btn {
-  text-align: center;
 }

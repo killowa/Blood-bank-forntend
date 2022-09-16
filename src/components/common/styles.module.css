@@ -2476,7 +2476,7 @@ textarea.form-control-lg {
   height: calc(1.5em + 1rem + 2px);
 }
 
-.form-select, .select {
+.form-select, :global(.select) {
   display: block;
   width: 100%;
   padding: 0.375rem 2.25rem 0.375rem 0.75rem;
@@ -2502,29 +2502,29 @@ textarea.form-control-lg {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .form-select, .select {
+  .form-select, :global(.select) {
     -webkit-transition: none;
     transition: none;
   }
 }
 
-.form-select:focus, .select:focus {
+.form-select:focus, :focus:global(.select) {
   border-color: #86b7fe;
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
           box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 
-.form-select[multiple], .select[multiple], .form-select[size]:not([size="1"]), .select[size]:not([size="1"]) {
+.form-select[multiple], [multiple]:global(.select), .form-select[size]:not([size="1"]), [size]:not([size="1"]):global(.select) {
   padding-right: 0.75rem;
   background-image: none;
 }
 
-.form-select:disabled, .select:disabled {
+.form-select:disabled, :disabled:global(.select) {
   background-color: #e9ecef;
 }
 
-.form-select:-moz-focusring, .select:-moz-focusring {
+.form-select:-moz-focusring, :-moz-focusring:global(.select) {
   color: transparent;
   text-shadow: 0 0 0 #212529;
 }
@@ -2687,7 +2687,7 @@ textarea.form-control-lg {
   pointer-events: none;
 }
 
-.btn-check[disabled] + .btn, .btn-check:disabled + .btn {
+.btn-check[disabled] + .btn, .btn-check[disabled] + :global(.my-btn), .btn-check:disabled + .btn, .btn-check:disabled + :global(.my-btn) {
   pointer-events: none;
   -webkit-filter: none;
           filter: none;
@@ -2811,7 +2811,7 @@ textarea.form-control-lg {
 .form-floating > .form-control,
 .form-floating > .form-control-plaintext,
 .form-floating > .form-select,
-.form-floating > .select {
+.form-floating > :global(.select) {
   height: calc(3.5rem + 2px);
   line-height: 1.25;
 }
@@ -2884,7 +2884,7 @@ textarea.form-control-lg {
 
 
 .form-floating > .form-select,
-.form-floating > .select {
+.form-floating > :global(.select) {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
@@ -2893,7 +2893,7 @@ textarea.form-control-lg {
 .form-floating > .form-control:not(:placeholder-shown) ~ label,
 .form-floating > .form-control-plaintext ~ label,
 .form-floating > .form-select ~ label,
-.form-floating > .select ~ label {
+.form-floating > :global(.select) ~ label {
   opacity: 0.65;
   -webkit-transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
           transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
@@ -2924,7 +2924,7 @@ textarea.form-control-lg {
 
 .input-group > .form-control,
 .input-group > .form-select,
-.input-group > .select,
+.input-group > :global(.select),
 .input-group > .form-floating {
   position: relative;
   -webkit-box-flex: 1;
@@ -2936,17 +2936,17 @@ textarea.form-control-lg {
 
 .input-group > .form-control:focus,
 .input-group > .form-select:focus,
-.input-group > .select:focus,
+.input-group > :focus:global(.select),
 .input-group > .form-floating:focus-within {
   z-index: 5;
 }
 
-.input-group .btn {
+.input-group .btn, .input-group :global(.my-btn) {
   position: relative;
   z-index: 2;
 }
 
-.input-group .btn:focus {
+.input-group .btn:focus, .input-group :focus:global(.my-btn) {
   z-index: 5;
 }
 
@@ -2971,9 +2971,10 @@ textarea.form-control-lg {
 
 .input-group-lg > .form-control,
 .input-group-lg > .form-select,
-.input-group-lg > .select,
+.input-group-lg > :global(.select),
 .input-group-lg > .input-group-text,
-.input-group-lg > .btn {
+.input-group-lg > .btn,
+.input-group-lg > :global(.my-btn) {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   border-radius: 0.5rem;
@@ -2981,9 +2982,10 @@ textarea.form-control-lg {
 
 .input-group-sm > .form-control,
 .input-group-sm > .form-select,
-.input-group-sm > .select,
+.input-group-sm > :global(.select),
 .input-group-sm > .input-group-text,
-.input-group-sm > .btn {
+.input-group-sm > .btn,
+.input-group-sm > :global(.my-btn) {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   border-radius: 0.25rem;
@@ -2991,9 +2993,9 @@ textarea.form-control-lg {
 
 
 .input-group-lg > .form-select,
-.input-group-lg > .select,
+.input-group-lg > :global(.select),
 .input-group-sm > .form-select,
-.input-group-sm > .select {
+.input-group-sm > :global(.select) {
   padding-right: 3rem;
 }
 
@@ -3001,7 +3003,7 @@ textarea.form-control-lg {
 .input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n + 3),
 .input-group:not(.has-validation) > .form-floating:not(:last-child) > .form-control,
 .input-group:not(.has-validation) > .form-floating:not(:last-child) > .form-select,
-.input-group:not(.has-validation) > .form-floating:not(:last-child) > .select {
+.input-group:not(.has-validation) > .form-floating:not(:last-child) > :global(.select) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -3010,7 +3012,7 @@ textarea.form-control-lg {
 .input-group.has-validation > .dropdown-toggle:nth-last-child(n + 4),
 .input-group.has-validation > .form-floating:nth-last-child(n + 3) > .form-control,
 .input-group.has-validation > .form-floating:nth-last-child(n + 3) > .form-select,
-.input-group.has-validation > .form-floating:nth-last-child(n + 3) > .select {
+.input-group.has-validation > .form-floating:nth-last-child(n + 3) > :global(.select) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -3023,7 +3025,7 @@ textarea.form-control-lg {
 
 .input-group > .form-floating:not(:first-child) > .form-control,
 .input-group > .form-floating:not(:first-child) > .form-select,
-.input-group > .form-floating:not(:first-child) > .select {
+.input-group > .form-floating:not(:first-child) > :global(.select) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -3077,18 +3079,18 @@ textarea.form-control-lg {
   background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
 }
 
-.was-validated .form-select:valid, .was-validated .select:valid, .form-select.is-valid, .is-valid.select {
+.was-validated .form-select:valid, .was-validated :valid:global(.select), .form-select.is-valid, .is-valid:global(.select) {
   border-color: #198754;
 }
 
-.was-validated .form-select:valid:not([multiple]):not([size]), .was-validated .select:valid:not([multiple]):not([size]), .was-validated .form-select:valid:not([multiple])[size="1"], .was-validated .select:valid:not([multiple])[size="1"], .form-select.is-valid:not([multiple]):not([size]), .is-valid.select:not([multiple]):not([size]), .form-select.is-valid:not([multiple])[size="1"], .is-valid.select:not([multiple])[size="1"] {
+.was-validated .form-select:valid:not([multiple]):not([size]), .was-validated :valid:not([multiple]):not([size]):global(.select), .was-validated .form-select:valid:not([multiple])[size="1"], .was-validated :valid:not([multiple])[size="1"]:global(.select), .form-select.is-valid:not([multiple]):not([size]), .is-valid:not([multiple]):not([size]):global(.select), .form-select.is-valid:not([multiple])[size="1"], .is-valid:not([multiple])[size="1"]:global(.select) {
   padding-right: 4.125rem;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
   background-position: right 0.75rem center, center right 2.25rem;
   background-size: 16px 12px, calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
 
-.was-validated .form-select:valid:focus, .was-validated .select:valid:focus, .form-select.is-valid:focus, .is-valid.select:focus {
+.was-validated .form-select:valid:focus, .was-validated :valid:focus:global(.select), .form-select.is-valid:focus, .is-valid:focus:global(.select) {
   border-color: #198754;
   -webkit-box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
           box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
@@ -3119,9 +3121,9 @@ textarea.form-control-lg {
   margin-left: .5em;
 }
 
-.was-validated .input-group > .form-control:not(:focus):valid, .input-group > .form-control:not(:focus).is-valid, .was-validated .input-group > .form-select:not(:focus):valid, .was-validated .input-group > .select:not(:focus):valid,
+.was-validated .input-group > .form-control:not(:focus):valid, .input-group > .form-control:not(:focus).is-valid, .was-validated .input-group > .form-select:not(:focus):valid, .was-validated .input-group > :not(:focus):valid:global(.select),
 .input-group > .form-select:not(:focus).is-valid,
-.input-group > .select:not(:focus).is-valid, .was-validated
+.input-group > :not(:focus).is-valid:global(.select), .was-validated
 .input-group > .form-floating:not(:focus-within):valid,
 .input-group > .form-floating:not(:focus-within).is-valid {
   z-index: 3;
@@ -3176,18 +3178,18 @@ textarea.form-control-lg {
   background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
 }
 
-.was-validated .form-select:invalid, .was-validated .select:invalid, .form-select.is-invalid, .is-invalid.select {
+.was-validated .form-select:invalid, .was-validated :invalid:global(.select), .form-select.is-invalid, .is-invalid:global(.select) {
   border-color: #dc3545;
 }
 
-.was-validated .form-select:invalid:not([multiple]):not([size]), .was-validated .select:invalid:not([multiple]):not([size]), .was-validated .form-select:invalid:not([multiple])[size="1"], .was-validated .select:invalid:not([multiple])[size="1"], .form-select.is-invalid:not([multiple]):not([size]), .is-invalid.select:not([multiple]):not([size]), .form-select.is-invalid:not([multiple])[size="1"], .is-invalid.select:not([multiple])[size="1"] {
+.was-validated .form-select:invalid:not([multiple]):not([size]), .was-validated :invalid:not([multiple]):not([size]):global(.select), .was-validated .form-select:invalid:not([multiple])[size="1"], .was-validated :invalid:not([multiple])[size="1"]:global(.select), .form-select.is-invalid:not([multiple]):not([size]), .is-invalid:not([multiple]):not([size]):global(.select), .form-select.is-invalid:not([multiple])[size="1"], .is-invalid:not([multiple])[size="1"]:global(.select) {
   padding-right: 4.125rem;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
   background-position: right 0.75rem center, center right 2.25rem;
   background-size: 16px 12px, calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
 
-.was-validated .form-select:invalid:focus, .was-validated .select:invalid:focus, .form-select.is-invalid:focus, .is-invalid.select:focus {
+.was-validated .form-select:invalid:focus, .was-validated :invalid:focus:global(.select), .form-select.is-invalid:focus, .is-invalid:focus:global(.select) {
   border-color: #dc3545;
   -webkit-box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
           box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
@@ -3218,15 +3220,15 @@ textarea.form-control-lg {
   margin-left: .5em;
 }
 
-.was-validated .input-group > .form-control:not(:focus):invalid, .input-group > .form-control:not(:focus).is-invalid, .was-validated .input-group > .form-select:not(:focus):invalid, .was-validated .input-group > .select:not(:focus):invalid,
+.was-validated .input-group > .form-control:not(:focus):invalid, .input-group > .form-control:not(:focus).is-invalid, .was-validated .input-group > .form-select:not(:focus):invalid, .was-validated .input-group > :not(:focus):invalid:global(.select),
 .input-group > .form-select:not(:focus).is-invalid,
-.input-group > .select:not(:focus).is-invalid, .was-validated
+.input-group > :not(:focus).is-invalid:global(.select), .was-validated
 .input-group > .form-floating:not(:focus-within):invalid,
 .input-group > .form-floating:not(:focus-within).is-invalid {
   z-index: 4;
 }
 
-.btn {
+.btn, :global(.my-btn) {
   --bs-btn-padding-x: 0.75rem;
   --bs-btn-padding-y: 0.375rem;
   --bs-btn-font-family: ;
@@ -3267,19 +3269,19 @@ textarea.form-control-lg {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .btn {
+  .btn, :global(.my-btn) {
     -webkit-transition: none;
     transition: none;
   }
 }
 
-:not(.btn-check) + .btn:hover, .btn:first-child:hover {
+:not(.btn-check) + .btn:hover, :not(.btn-check) + :hover:global(.my-btn), .btn:first-child:hover, :first-child:hover:global(.my-btn) {
   color: var(--bs-btn-hover-color);
   background-color: var(--bs-btn-hover-bg);
   border-color: var(--bs-btn-hover-border-color);
 }
 
-.btn:focus-visible {
+.btn:focus-visible, :focus-visible:global(.my-btn) {
   color: var(--bs-btn-hover-color);
   background-color: var(--bs-btn-hover-bg);
   border-color: var(--bs-btn-hover-border-color);
@@ -3288,28 +3290,31 @@ textarea.form-control-lg {
           box-shadow: var(--bs-btn-focus-box-shadow);
 }
 
-.btn-check:focus-visible + .btn {
+.btn-check:focus-visible + .btn, .btn-check:focus-visible + :global(.my-btn) {
   border-color: var(--bs-btn-hover-border-color);
   outline: 0;
   -webkit-box-shadow: var(--bs-btn-focus-box-shadow);
           box-shadow: var(--bs-btn-focus-box-shadow);
 }
 
-.btn-check:checked + .btn,
-:not(.btn-check) + .btn:active, .btn:first-child:active, .active.btn, .show.btn {
+.btn-check:checked + .btn, .btn-check:checked + :global(.my-btn),
+:not(.btn-check) + .btn:active,
+:not(.btn-check) + :active:global(.my-btn), .btn:first-child:active, :first-child:active:global(.my-btn), .btn.active, .active:global(.my-btn), .btn.show, .show:global(.my-btn) {
   color: var(--bs-btn-active-color);
   background-color: var(--bs-btn-active-bg);
   border-color: var(--bs-btn-active-border-color);
 }
 
-.btn-check:checked + .btn:focus-visible,
-:not(.btn-check) + .btn:active:focus-visible, .btn:first-child:active:focus-visible, .active.btn:focus-visible, .show.btn:focus-visible {
+.btn-check:checked + .btn:focus-visible, .btn-check:checked + :focus-visible:global(.my-btn),
+:not(.btn-check) + .btn:active:focus-visible,
+:not(.btn-check) + :active:focus-visible:global(.my-btn), .btn:first-child:active:focus-visible, :first-child:active:focus-visible:global(.my-btn), .btn.active:focus-visible, .active:focus-visible:global(.my-btn), .btn.show:focus-visible, .show:focus-visible:global(.my-btn) {
   -webkit-box-shadow: var(--bs-btn-focus-box-shadow);
           box-shadow: var(--bs-btn-focus-box-shadow);
 }
 
-.btn:disabled, .disabled.btn,
-fieldset:disabled .btn {
+.btn:disabled, :disabled:global(.my-btn), .btn.disabled, .disabled:global(.my-btn),
+fieldset:disabled .btn,
+fieldset:disabled :global(.my-btn) {
   color: var(--bs-btn-disabled-color);
   pointer-events: none;
   background-color: var(--bs-btn-disabled-bg);
@@ -3436,7 +3441,7 @@ fieldset:disabled .btn {
   --bs-btn-disabled-border-color: #f8f9fa;
 }
 
-.btn-dark, .btn {
+.btn-dark, :global(.my-btn) {
   --bs-btn-color: #fff;
   --bs-btn-bg: #212529;
   --bs-btn-border-color: #212529;
@@ -3613,14 +3618,14 @@ fieldset:disabled .btn {
   color: var(--bs-btn-hover-color);
 }
 
-.btn-lg, .btn-group-lg > .btn {
+.btn-lg, .btn-group-lg > .btn, .btn-group-lg > :global(.my-btn) {
   --bs-btn-padding-y: 0.5rem;
   --bs-btn-padding-x: 1rem;
   --bs-btn-font-size: 1.25rem;
   --bs-btn-border-radius: 0.5rem;
 }
 
-.btn-sm, .btn-group-sm > .btn {
+.btn-sm, .btn-group-sm > .btn, .btn-group-sm > :global(.my-btn) {
   --bs-btn-padding-y: 0.25rem;
   --bs-btn-padding-x: 0.5rem;
   --bs-btn-font-size: 0.875rem;
@@ -4023,26 +4028,38 @@ fieldset:disabled .btn {
   vertical-align: middle;
 }
 
-.btn-group > .btn,
-.btn-group-vertical > .btn {
+.btn-group > .btn, .btn-group > :global(.my-btn),
+.btn-group-vertical > .btn,
+.btn-group-vertical > :global(.my-btn) {
   position: relative;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
 }
 
-.btn-group > .btn-check:checked + .btn,
+.btn-group > .btn-check:checked + .btn, .btn-group > .btn-check:checked + :global(.my-btn),
 .btn-group > .btn-check:focus + .btn,
+.btn-group > .btn-check:focus + :global(.my-btn),
 .btn-group > .btn:hover,
+.btn-group > :hover:global(.my-btn),
 .btn-group > .btn:focus,
+.btn-group > :focus:global(.my-btn),
 .btn-group > .btn:active,
-.btn-group > .active.btn,
+.btn-group > :active:global(.my-btn),
+.btn-group > .btn.active,
+.btn-group > .active:global(.my-btn),
 .btn-group-vertical > .btn-check:checked + .btn,
+.btn-group-vertical > .btn-check:checked + :global(.my-btn),
 .btn-group-vertical > .btn-check:focus + .btn,
+.btn-group-vertical > .btn-check:focus + :global(.my-btn),
 .btn-group-vertical > .btn:hover,
+.btn-group-vertical > :hover:global(.my-btn),
 .btn-group-vertical > .btn:focus,
+.btn-group-vertical > :focus:global(.my-btn),
 .btn-group-vertical > .btn:active,
-.btn-group-vertical > .active.btn {
+.btn-group-vertical > :active:global(.my-btn),
+.btn-group-vertical > .btn.active,
+.btn-group-vertical > .active:global(.my-btn) {
   z-index: 1;
 }
 
@@ -4065,21 +4082,25 @@ fieldset:disabled .btn {
   border-radius: 0.375rem;
 }
 
-.btn-group > :not(.btn-check:first-child) + .btn,
+.btn-group > :not(.btn-check:first-child) + .btn, .btn-group > :not(.btn-check:first-child) + :global(.my-btn),
 .btn-group > .btn-group:not(:first-child) {
   margin-left: -1px;
 }
 
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle),
-.btn-group > .dropdown-toggle-split.btn:first-child,
-.btn-group > .btn-group:not(:last-child) > .btn {
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > :not(:last-child):not(.dropdown-toggle):global(.my-btn),
+.btn-group > .btn.dropdown-toggle-split:first-child,
+.btn-group > .dropdown-toggle-split:first-child:global(.my-btn),
+.btn-group > .btn-group:not(:last-child) > .btn,
+.btn-group > .btn-group:not(:last-child) > :global(.my-btn) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.btn-group > .btn:nth-child(n + 3),
+.btn-group > .btn:nth-child(n + 3), .btn-group > :nth-child(n + 3):global(.my-btn),
 .btn-group > :not(.btn-check) + .btn,
-.btn-group > .btn-group:not(:first-child) > .btn {
+.btn-group > :not(.btn-check) + :global(.my-btn),
+.btn-group > .btn-group:not(:first-child) > .btn,
+.btn-group > .btn-group:not(:first-child) > :global(.my-btn) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -4099,12 +4120,12 @@ fieldset:disabled .btn {
   margin-right: 0;
 }
 
-.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .btn-group-sm > :global(.my-btn) + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem;
 }
 
-.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .btn-group-lg > :global(.my-btn) + .dropdown-toggle-split {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
@@ -4124,23 +4145,26 @@ fieldset:disabled .btn {
 
 
 .btn-group-vertical > .btn,
+.btn-group-vertical > :global(.my-btn),
 .btn-group-vertical > .btn-group {
   width: 100%;
 }
 
-.btn-group-vertical > .btn:not(:first-child),
+.btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > :not(:first-child):global(.my-btn),
 .btn-group-vertical > .btn-group:not(:first-child) {
   margin-top: -1px;
 }
 
-.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle),
-.btn-group-vertical > .btn-group:not(:last-child) > .btn {
+.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > :not(:last-child):not(.dropdown-toggle):global(.my-btn),
+.btn-group-vertical > .btn-group:not(:last-child) > .btn,
+.btn-group-vertical > .btn-group:not(:last-child) > :global(.my-btn) {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.btn-group-vertical > .btn ~ .btn,
-.btn-group-vertical > .btn-group:not(:first-child) > .btn {
+.btn-group-vertical > .btn ~ .btn, .btn-group-vertical > :global(.my-btn) ~ .btn, .btn-group-vertical > .btn ~ :global(.my-btn), .btn-group-vertical > :global(.my-btn) ~ :global(.my-btn),
+.btn-group-vertical > .btn-group:not(:first-child) > .btn,
+.btn-group-vertical > .btn-group:not(:first-child) > :global(.my-btn) {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
@@ -5397,7 +5421,7 @@ fieldset:disabled .btn {
   display: none;
 }
 
-.btn .badge {
+.btn .badge, :global(.my-btn) .badge {
   position: relative;
   top: -1px;
 }
@@ -7733,7 +7757,7 @@ fieldset:disabled .btn {
   opacity: 0.5;
 }
 
-.placeholder.btn::before {
+.placeholder.btn::before, .placeholder:global(.my-btn)::before {
   display: inline-block;
   content: "";
 }
@@ -12514,21 +12538,9 @@ fieldset:disabled .btn {
   }
 }
 
-.card {
-  width: 75%;
-  border-radius: 10px;
-  background-color: white;
-  border: none;
-}
-
 .form-control {
   height: 60px;
   font-size: medium;
-}
-
-.btn {
-  font-size: large;
-  height: 60px;
 }
 
 .error {
@@ -12540,13 +12552,6 @@ fieldset:disabled .btn {
 .subscript {
   font-size: small;
   margin-left: 5px;
-}
-
-.select {
-  height: 40px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 
 a {
@@ -12588,7 +12593,11 @@ nav a:hover {
   margin: 0;
 }
 
-.center {
+body {
+  height: 100vh;
+}
+
+:global .center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12604,7 +12613,46 @@ nav a:hover {
           justify-content: center;
 }
 
-body {
-  height: 100vh;
+:global .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+  padding-bottom: 10px;
+}
+
+:global .my-card {
+  border-radius: 10px;
+  background-color: white;
+  border: none;
+}
+
+:global .w-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+:global .error {
+  color: #dc3545;
+  margin-left: 10px;
+  font-size: small;
+}
+
+:global(.my-btn) {
+  font-size: large;
+  height: 60px;
+  text-align: center;
+}
+
+:global(.select) {
+  height: 40px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 /*# sourceMappingURL=styles.module.css.map */

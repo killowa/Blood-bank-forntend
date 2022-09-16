@@ -1,13 +1,13 @@
+import FormCard from "../common/FormCard";
 import Form from "./Form";
-import styles from './style.module.css'
+import styles from './style.module.scss'
 
 const Index = () => {
   return ( 
-    <div className={`${styles.center} ${styles.signup} bg-light`}>
-        <div className={`w-50 ${styles.card} ${styles.center}`}>
-          <h1 className={`text-center w-100 bg-danger`}>Sign Up</h1>
-          <Form/>
-        </div>
+    <div className={`${styles.signup} center bg-light`}>
+      <FormCard title='Sign up'>
+        <Form/>
+      </FormCard>
     </div>
    );
 }

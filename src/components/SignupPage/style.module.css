@@ -3296,19 +3296,19 @@ textarea.form-control-lg {
 }
 
 .btn-check:checked + .btn,
-:not(.btn-check) + .btn:active, .btn:first-child:active, .active.btn, .show.btn {
+:not(.btn-check) + .btn:active, .btn:first-child:active, .btn.active, .btn.show {
   color: var(--bs-btn-active-color);
   background-color: var(--bs-btn-active-bg);
   border-color: var(--bs-btn-active-border-color);
 }
 
 .btn-check:checked + .btn:focus-visible,
-:not(.btn-check) + .btn:active:focus-visible, .btn:first-child:active:focus-visible, .active.btn:focus-visible, .show.btn:focus-visible {
+:not(.btn-check) + .btn:active:focus-visible, .btn:first-child:active:focus-visible, .btn.active:focus-visible, .btn.show:focus-visible {
   -webkit-box-shadow: var(--bs-btn-focus-box-shadow);
           box-shadow: var(--bs-btn-focus-box-shadow);
 }
 
-.btn:disabled, .disabled.btn,
+.btn:disabled, .btn.disabled,
 fieldset:disabled .btn {
   color: var(--bs-btn-disabled-color);
   pointer-events: none;
@@ -3436,7 +3436,7 @@ fieldset:disabled .btn {
   --bs-btn-disabled-border-color: #f8f9fa;
 }
 
-.btn-dark, .btn {
+.btn-dark {
   --bs-btn-color: #fff;
   --bs-btn-bg: #212529;
   --bs-btn-border-color: #212529;
@@ -4036,13 +4036,13 @@ fieldset:disabled .btn {
 .btn-group > .btn:hover,
 .btn-group > .btn:focus,
 .btn-group > .btn:active,
-.btn-group > .active.btn,
+.btn-group > .btn.active,
 .btn-group-vertical > .btn-check:checked + .btn,
 .btn-group-vertical > .btn-check:focus + .btn,
 .btn-group-vertical > .btn:hover,
 .btn-group-vertical > .btn:focus,
 .btn-group-vertical > .btn:active,
-.btn-group-vertical > .active.btn {
+.btn-group-vertical > .btn.active {
   z-index: 1;
 }
 
@@ -4071,7 +4071,7 @@ fieldset:disabled .btn {
 }
 
 .btn-group > .btn:not(:last-child):not(.dropdown-toggle),
-.btn-group > .dropdown-toggle-split.btn:first-child,
+.btn-group > .btn.dropdown-toggle-split:first-child,
 .btn-group > .btn-group:not(:last-child) > .btn {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -4121,7 +4121,6 @@ fieldset:disabled .btn {
       -ms-flex-pack: center;
           justify-content: center;
 }
-
 
 .btn-group-vertical > .btn,
 .btn-group-vertical > .btn-group {
@@ -12514,21 +12513,9 @@ fieldset:disabled .btn {
   }
 }
 
-.card {
-  width: 75%;
-  border-radius: 10px;
-  background-color: white;
-  border: none;
-}
-
 .form-control {
   height: 60px;
   font-size: medium;
-}
-
-.btn {
-  font-size: large;
-  height: 60px;
 }
 
 .error {
@@ -12554,7 +12541,7 @@ a {
 }
 
 nav {
-  background-color: #0d6efd;
+  background-color: darkblue;
   color: #f8f9fa;
   padding: 0 !important;
 }
@@ -12588,27 +12575,11 @@ nav a:hover {
   margin: 0;
 }
 
-.center {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 body {
   height: 100vh;
 }
 
-.center {
+:global .center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12622,6 +12593,23 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+:global .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+}
+
+:global .my-card {
+  border-radius: 10px;
+  background-color: white;
+  border: none;
 }
 
 .signup {
@@ -12644,9 +12632,5 @@ h1, .h1 {
 
 form {
   width: 80%;
-}
-
-.btn {
-  text-align: center;
 }
 /*# sourceMappingURL=style.module.css.map */

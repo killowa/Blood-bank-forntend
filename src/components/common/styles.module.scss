@@ -3,24 +3,10 @@ $secondary-color: darkblue;
 
 // Common components styling
 
-.card {
-  width: 75%;
-  border-radius: 10px;
-  background-color: white;
-  border: none;
-}
-
 .form-control {
   @extend .form-control;
   height: 60px;
   font-size: medium;
-}
-
-.btn {
-  @extend .btn;
-  @extend .btn-dark;
-  font-size: large;
-  height: 60px;
 }
 
 .error {
@@ -34,11 +20,6 @@ $secondary-color: darkblue;
   margin-left: 5px
 }
 
-.select {
-  @extend .form-select;
-  height: 40px;
-  width: fit-content;
-}
 
 // Global stylings
 
@@ -79,13 +60,53 @@ nav {
   margin: 0;
 }
 
-.center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 body {
   height: 100vh;
+}
+
+:global {
+  .center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding-bottom: 10px;
+  }
+
+  .my-card {
+    border-radius: 10px;
+    background-color: white;
+    border: none;
+  }
+
+  .w-fit {
+    width: fit-content;
+  }
+
+  .error {
+    color: $danger;
+    margin-left: 10px;
+    font-size: small;
+  }
+
+}
+
+:global(.my-btn) {
+  @extend .btn;
+  @extend .btn-dark;
+  font-size: large;
+  height: 60px;
+  text-align: center;
+}
+
+:global(.select) {
+  @extend .form-select;
+  height: 40px;
+  width: fit-content;
 }

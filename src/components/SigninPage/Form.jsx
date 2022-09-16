@@ -1,20 +1,20 @@
 import { Formik, Form as FormikForm } from "formik";
 import Input from "../common/Input";
-import styles from './style.module.css'
 import * as yup from 'yup'
 import { Link, useNavigate } from "react-router-dom";
 import routes from "../../Routes";
+import axios from "axios";
 
 const Form = () => {
   const navigate = useNavigate()
 
   const initialValues = {
-    username: "",
+    email: "",
     password: ""
   }
 
   const validationSchema = yup.object({
-    username: yup.string('Enter username please').required('username is required'),
+    email: yup.string('Enter email please').email().required('email is required'),
     password: yup
     .string('Enter password please')
     .required('password is required')
@@ -26,15 +26,16 @@ const Form = () => {
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit = {(values) => {
+      onSubmit = {async (values) => {
+        await axios.post('/user/login', values)
         navigate(routes.dashboard)
       }}
     >
-      <FormikForm className={`w-100 h-100 ${styles.center}`}>
+      <FormikForm className={`w-100 h-100 center`}>
         <Input name="username" />
         <Input name="password" type="password" />
         <span>Don't have an account?<Link to='/signup'> signup</Link></span> 
-        <button className={`${styles.btn} w-50 my-4`} type="submit">Submit</button>
+        <button className={`my-btn w-50 my-4`} type="submit">Submit</button>
       </FormikForm>
 
     </Formik>
